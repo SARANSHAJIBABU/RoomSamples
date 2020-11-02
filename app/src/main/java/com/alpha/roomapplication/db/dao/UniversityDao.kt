@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
 import com.alpha.roomapplication.db.dao.helper.StudentWithApplication
+import com.alpha.roomapplication.db.dao.helper.StudentWithClasses
 import com.alpha.roomapplication.db.dao.helper.StudentWithVehicles
 
 @Dao
@@ -18,4 +19,8 @@ interface UniversityDao {
     @Query("SELECT * FROM Student")
     @Transaction
     fun fetchStudentWithApplication(): LiveData<List<StudentWithApplication>>
+
+    @Query("SELECT * FROM Student")
+    @Transaction
+    fun fetchStudentsWithClasses(): LiveData<List<StudentWithClasses>>
 }
